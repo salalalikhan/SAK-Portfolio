@@ -1,0 +1,430 @@
+from flask import Flask, send_from_directory
+import os
+
+app = Flask(__name__)
+
+# Serve static files from the 'static' directory
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory('static', filename)
+
+html_code = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salal Ali Khan - Data Analyst</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0; 
+            padding: 0;
+            font-size: 18px; 
+            background: #f7f7f7 url('https://www.transparenttextures.com/patterns/circles.png') repeat;
+            color: #333;
+        }
+
+        /* HEADER: full width */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 50px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-sizing: border-box; /* ensures padding is included in total width */
+        }
+
+        .intro-text {
+            max-width: 50%;
+        }
+        .intro-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .intro-text h1 span {
+            color: #ff6200;
+        }
+        .intro-text p {
+            font-size: 1rem;
+            margin: 10px 0 20px;
+            color: #555;
+        }
+
+        /* 
+           We put ALL the links into one .nav-links container 
+           so they appear in a single row.
+        */
+        .nav-links {
+            display: flex;
+            gap: 15px; 
+            margin-top: 20px;
+            align-items: center; 
+        }
+        /* Keep “About Me” looking like a button */
+        .nav-links .btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: #ff6200;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0px 4px 8px rgba(255, 98, 0, 0.5);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .nav-links .btn:hover {
+            background-color: #e65100;
+            transform: scale(1.05);
+        }
+
+        /* Other nav links (Skills, Experience, etc.) */
+        .nav-links a {
+            text-decoration: none; 
+            font-weight: bold;
+            color: #ff6200;
+            padding: 10px 15px; 
+            border-radius: 20px;
+            background-color: #ffe4c4;
+            transition: background-color 0.3s;
+        }
+        /* We'll override the .btn styles on “About Me” 
+           so it doesn't look the same as others */
+        .nav-links a:hover {
+            background-color: #ff6200; 
+            color: #fff;
+        }
+
+        /* 
+           Universal section styling (applies to all sections)
+        */
+        section {
+            padding: 50px; 
+            margin: 50px auto; 
+            width: 60%;
+            max-width: 1920px;
+            background: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        section h2 {
+            font-size: 2rem; 
+            font-weight: bold; 
+            color: #ff6200;
+            text-align: center; 
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 150px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .profile-image img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+            border: 5px solid #ffebcd;
+        }
+
+        .skill-container {
+            margin-top: 20px;
+        }
+        .skill {
+            margin-bottom: 20px;
+        }
+        .skill-title {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .progress {
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            box-shadow: inset 0px -2px 5px rgba(255, 255, 255, 0.5), inset 0px 2px 5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 15px;
+            animation: grow 2s ease-out;
+            box-shadow: inset 0px 2px 5px rgba(255, 255, 255, 0.3), 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .progress-bar-python {
+            background: linear-gradient(135deg, #ff6200, #ff8500);
+            width: 90%;
+        }
+        .progress-bar-sql {
+            background: linear-gradient(135deg, #ff6200, #ff8500);
+            width: 80%;
+        }
+        .progress-bar-visualization {
+            background: linear-gradient(135deg, #ff6200, #ff8500);
+            width: 85%;
+        }
+        .progress-bar-ml {
+            background: linear-gradient(135deg, #ff6200, #ff8500);
+            width: 70%;
+        }
+        @keyframes grow {
+            from {
+                width: 0%;
+            }
+            to {
+                width: inherit;
+            }
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-top: 18px;
+        }
+        .project-card {
+            background: linear-gradient(to bottom, #ffe4c4, #ffd4a3);
+            border-radius: 15px;
+            padding: 10px; 
+            margin: 0; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .project-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ff6200;
+            margin-bottom: 10px;
+        }
+        .project-status {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .experience-section {
+            margin-top: 20px;
+        }
+        .experience-section .job {
+            margin-bottom: 30px;
+        }
+        .experience-section .job h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6200;
+            margin-bottom: 5px;
+        }
+        .experience-section .job span {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .experience-section .job ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .experience-section .job ul li {
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #ff6200;
+            transform: scale(1.2);
+        }
+
+        /* Specifically reduce top spacing for
+           about, skills, experience, projects, and contact sections. */
+        #about,
+        #skills,
+        #experience,
+        #projects,
+        #contact {
+            margin-top: 20px !important; 
+            padding-top: 20px !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="intro-text">
+            <h1>Hi There, I'm <span>Salal Ali Khan</span></h1>
+            <p>Master’s Student in CS | Aspiring Data Analyst | Passionate About Data-Driven Solutions.</p>
+            
+            <!-- Single .nav-links container for all links in one row -->
+            <div class="nav-links">
+                <a href="#about" class="btn">About Me</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="profile-image">
+            <img src="https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/male/45.png" alt="Salal Ali Khan Bitmoji">
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Dedicated Master of Applied Computer Science seeking a role to utilize my advanced analytical abilities & machine learning 
+            to improve organizational decision-making processes. 
+            Demonstrates exceptional communication and critical thinking skills while working collaboratively 
+            as a strong contributing team player. 
+            Strategic problem solver who focuses on data-driven decision-making.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-container">
+            <div class="skill">
+                <div class="skill-title">Python</div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-python">90%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-title">SQL</div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-sql">80%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-title">Tableau</div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-visualization">85%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-title">AWS: EC2, S3, RDS, VPC</div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-ml">70%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-section">
+            <div class="job">
+                <h3>Data Quality Analyst</h3>
+                <span><b>(June 2022 – July 2023) - German Aid Program, Peshawar, PK</b></span>
+                <ul>
+                    <li>Established and enforced data standards and policies to ensure consistency across the organization.</li>
+                    <li>Conducted periodic audits of data to assess its quality and identified areas for improvement.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Data Analyst</h3>
+                <span><b>(April 2021 – March 2022) - United Nations Development Program, Peshawar, PK</b></span>
+                <ul>
+                    <li>Performed exploratory data analysis (EDA) to uncover patterns and insights in COVID-related data.</li>
+                    <li>Prepared reports and presentations summarizing key findings and trends.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Data Analyst Intern</h3>
+                <span><b>(March 2020 – February 2021) - National Commission for Human Rights, Peshawar, PK</b></span>
+                <ul>
+                    <li>Analyzed data on human rights violations and created visualizations to support reports.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <a href="https://github.com/salalalikhan/Data-Format-Handler" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="project-title">Data Format Handler</div>
+                    <div class="project-status">View on GitHub</div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/salalalikhan/Logistic-SGD-Performance" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="project-title">Logistic SGD Performance</div>
+                    <div class="project-status">View on GitHub</div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/salalalikhan/KNN-Classifier-From-Scratch" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="project-title">KNN-Classifier-From-Scratch</div>
+                    <div class="project-status">View on Github</div>
+                </a>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Project 4</div>
+                <div class="project-status">Loading...</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="social-links">
+            <a href="mailto:salalalalikhan@gmail.com" title="Email me">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://github.com/salalalikhan" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/salalalikhan/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="tel:+1234567890" title="Call me">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
+"""
+
+@app.route('/')
+def home():
+    return html_code
+
+if __name__ == '__main__':
+    app.run(debug=True)
