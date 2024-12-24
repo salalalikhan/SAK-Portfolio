@@ -8,6 +8,8 @@ app = Flask(__name__)
 def static_files(filename):
     return send_from_directory('static', filename)
 
+#HTML SCRIPT FOR THE PAGE
+
 html_code = """
 <!DOCTYPE html>
 <html lang="en">
