@@ -7,15 +7,18 @@
     <title>Salal Ali Khan - Data Analyst</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
     <style>
+        /* =======================
+       Base / Universal Styles
+       ======================= */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -58,10 +61,7 @@
             color: #555;
         }
 
-        /* 
-           We put ALL the links into one .nav-links container 
-           so they appear in a single row.
-        */
+        /* Navigation links (desktop/default) */
         .nav-links {
             display: flex;
             gap: 15px;
@@ -69,7 +69,7 @@
             align-items: center;
         }
 
-        /* Keep “About Me” looking like a button */
+        /* “About Me” as a button */
         .nav-links .btn {
             padding: 10px 20px;
             border-radius: 30px;
@@ -97,16 +97,12 @@
             transition: background-color 0.3s;
         }
 
-        /* We'll override the .btn styles on “About Me” 
-           so it doesn't look the same as others */
         .nav-links a:hover {
             background-color: #ff6200;
             color: #fff;
         }
 
-        /* 
-           Universal section styling (applies to all sections)
-        */
+        /* Universal section styling */
         section {
             padding: 50px;
             margin: 50px auto;
@@ -156,7 +152,8 @@
             height: 20px;
             background: #e0e0e0;
             border-radius: 15px;
-            box-shadow: inset 0px -2px 5px rgba(255, 255, 255, 0.5), inset 0px 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0px -2px 5px rgba(255, 255, 255, 0.5),
+                inset 0px 2px 5px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
 
@@ -169,7 +166,8 @@
             font-weight: bold;
             border-radius: 15px;
             animation: grow 2s ease-out;
-            box-shadow: inset 0px 2px 5px rgba(255, 255, 255, 0.3), 0px 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0px 2px 5px rgba(255, 255, 255, 0.3),
+                0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .progress-bar-python {
@@ -290,8 +288,10 @@
             transform: scale(1.2);
         }
 
-        /* Specifically reduce top spacing for
-           about, skills, experience, projects, and contact sections. */
+        /*
+      Specifically reduce top spacing for:
+      about, skills, experience, projects, and contact sections
+    */
         #about,
         #skills,
         #experience,
@@ -300,6 +300,71 @@
             margin-top: 20px !important;
             padding-top: 20px !important;
         }
+
+        /* =========================================
+       Media Query for screens <= 576px (Mobile)
+       ========================================= */
+        @media (max-width: 576px) {
+
+            /* Header adjustments for small screens */
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .profile-image {
+                width: 100px;
+                /* Smaller profile image for phones */
+                margin-bottom: 15px;
+            }
+
+            .intro-text h1 {
+                font-size: 1.8rem;
+                /* Adjust header font size */
+            }
+
+            .intro-text p {
+                font-size: 0.9rem;
+                /* Adjust intro text size */
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 5px;
+                /* Reduce gap between nav links */
+            }
+
+            /* Section layout for better spacing */
+            section {
+                width: 95%;
+                /* Reduce width for small screens */
+                padding: 10px;
+                /* Adjust padding for compact layout */
+                margin: 10px auto;
+            }
+
+            /* Project grid for smaller cards */
+            .project-container {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 5px;
+                /* Compact spacing */
+            }
+
+            .project-card {
+                padding: 5px;
+                /* Reduce padding in project cards */
+            }
+
+            /* Buttons and links size */
+            .nav-links .btn,
+            .nav-links a {
+                font-size: 0.8rem;
+                /* Smaller font size */
+                padding: 8px;
+                /* Compact button size */
+            }
+        }
     </style>
 </head>
 
@@ -307,7 +372,10 @@
     <header>
         <div class="intro-text">
             <h1>Hi There, I'm <span>Salal Ali Khan</span></h1>
-            <p>Master’s Student in CS | Aspiring Data Analyst | Passionate About Data-Driven Solutions.</p>
+            <p>
+                Master’s Student in CS | Aspiring Data Analyst |
+                Passionate About Data-Driven Solutions.
+            </p>
 
             <!-- Single .nav-links container for all links in one row -->
             <div class="nav-links">
@@ -320,19 +388,19 @@
         </div>
         <div class="profile-image">
             <img src="https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/male/45.png"
-                alt="Salal Ali Khan Bitmoji">
+                alt="Salal Ali Khan Bitmoji" />
         </div>
     </header>
 
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Dedicated Master of Applied Computer Science seeking a role to utilize my advanced analytical abilities &
-            machine learning
-            to improve organizational decision-making processes.
-            Demonstrates exceptional communication and critical thinking skills while working collaboratively
-            as a strong contributing team player.
-            Strategic problem solver who focuses on data-driven decision-making.
+            Dedicated Master of Applied Computer Science seeking a role to utilize my
+            advanced analytical abilities & machine learning to improve organizational
+            decision-making processes. Demonstrates exceptional communication and
+            critical thinking skills while working collaboratively as a strong
+            contributing team player. Strategic problem solver who focuses on
+            data-driven decision-making.
         </p>
     </section>
 
@@ -373,9 +441,13 @@
                 <h3>Data Quality Analyst</h3>
                 <span><b>(June 2022 – July 2023) - German Aid Program, Peshawar, PK</b></span>
                 <ul>
-                    <li>Established and enforced data standards and policies to ensure consistency across the
-                        organization.</li>
-                    <li>Conducted periodic audits of data to assess its quality and identified areas for improvement.
+                    <li>
+                        Established and enforced data standards and policies to ensure
+                        consistency across the organization.
+                    </li>
+                    <li>
+                        Conducted periodic audits of data to assess its quality and
+                        identified areas for improvement.
                     </li>
                 </ul>
             </div>
@@ -383,16 +455,24 @@
                 <h3>Data Analyst</h3>
                 <span><b>(April 2021 – March 2022) - United Nations Development Program, Peshawar, PK</b></span>
                 <ul>
-                    <li>Performed exploratory data analysis (EDA) to uncover patterns and insights in COVID-related
-                        data.</li>
-                    <li>Prepared reports and presentations summarizing key findings and trends.</li>
+                    <li>
+                        Performed exploratory data analysis (EDA) to uncover patterns and
+                        insights in COVID-related data.
+                    </li>
+                    <li>
+                        Prepared reports and presentations summarizing key findings and
+                        trends.
+                    </li>
                 </ul>
             </div>
             <div class="job">
                 <h3>Data Analyst Intern</h3>
                 <span><b>(March 2020 – February 2021) - National Commission for Human Rights, Peshawar, PK</b></span>
                 <ul>
-                    <li>Analyzed data on human rights violations and created visualizations to support reports.</li>
+                    <li>
+                        Analyzed data on human rights violations and created visualizations
+                        to support reports.
+                    </li>
                 </ul>
             </div>
         </div>
