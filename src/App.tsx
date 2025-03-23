@@ -122,15 +122,13 @@ function App() {
                   <div className="h-full w-[85%] bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"></div>
                 </div>
               </div>
-              <div className="h-2 bg-gray-700 rounded-full">
-                <div className="mb-4">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-white">Snowflake</span>
-                    <span className="text-orange-500">90%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700 rounded-full">
-                    <div className="h-full w-[85%] bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"></div>
-                  </div>
+              <div className="mb-4">
+                <div className="flex justify-between mb-2">
+                  <span className="text-white">Snowflake</span>
+                  <span className="text-orange-500">90%</span>
+                </div>
+                <div className="h-2 bg-gray-700 rounded-full">
+                  <div className="h-full w-[90%] bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"></div>
                 </div>
               </div>
 
