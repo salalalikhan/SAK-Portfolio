@@ -59,7 +59,7 @@ function App() {
                 <span className="block text-orange-500">Salal Ali Khan</span>
               </h1>
               <p className="mt-3 text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl">
-                Master's Student in CS | Aspiring Data Analyst | Passionate About Data-Driven Solutions
+                Data Engineer & AI Enthusiast | Master's in Applied Computer Science
               </p>
             </div>
             <div className="mt-8 md:mt-0 w-32 md:w-48">
@@ -80,7 +80,7 @@ function App() {
             About Me
           </h2>
           <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto">
-            Data‐driven and detail‐oriented Master of Applied Computer Science candidate with hands‐on experience in data analysis, visualization (Python, SQL, Tableau).  and predictive modeling. Adept at improving data quality and delivering actionable insights that drive informed business decisions. A strong communicator and critical thinker, I thrive on collaborating in dynamic environments to achieve measurable results.
+            I'm passionate about designing scalable data systems, optimizing machine learning workflows, and transforming raw data into actionable insights. With hands-on experience across UN and international development sectors, I bring both analytical sharpness and real-world impact to the table.
           </p>
         </div>
       </section>
@@ -144,12 +144,12 @@ function App() {
           </h2>
           <div className="space-y-12 max-w-3xl mx-auto">
             <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-orange-500">Data Quality Analyst</h3>
+              <h3 className="text-xl font-bold text-orange-500">Data Engineer II </h3>
               <p className="text-gray-400 mt-1">June 2022 – July 2023 | German Aid Program, Peshawar, PK</p>
               <ul className="mt-4 space-y-2 text-gray-300">
-                <li>• Established and enforced data standards across the organization, leveraging data profiling tools (e.g., Python/SQL queries) to identify anomalies, outliers, and inconsistencies.</li>
-                <li>• Conducted periodic data audits to assess quality, collaborating with cross‐functional teams to resolve issues (e.g., removing duplicates, correcting errors) and improve data accuracy by 18%.</li>
-                <li>•	Coordinated with data governance teams to ensure compliance with organizational policies and regulatory requirements, reducing data‐related compliance risk by 10%.</li>
+                <li>• Designed and optimized ETL pipelines; automated workflows using Snowflake Streams for a 12% efficiency gain..</li>
+                <li>• Built scalable data infrastructure and implemented real-time data streaming for faster decisions.</li>
+                <li>•	Reduced dashboard load times by 7% via query performance tuning.</li>
               </ul>
             </div>
 
@@ -157,9 +157,9 @@ function App() {
               <h3 className="text-xl font-bold text-orange-500">Data Analyst</h3>
               <p className="text-gray-400 mt-1">April 2021 – March 2022 | United Nations Development Program, Peshawar, PK</p>
               <ul className="mt-4 space-y-2 text-gray-300">
-                <li>• Conducted Exploratory Data Analysis (EDA) on COVID‐related datasets using Python and visualization tools (Tableau, Power BI) to uncover patterns, trends, and anomalies, informing 3 major policy briefs for stakeholders.</li>
-                <li>• Developed interactive dashboards for cross‐functional teams, reducing monthly reporting time from 5 days to 2 days and expediting data‐driven decisions.</li>
-                <li>•	Collaborated with leadership to translate complex data findings into actionable recommendations, influencing project direction and resource allocation.</li>
+                <li>• Conducted EDA on COVID datasets to support 3 key policy briefs.</li>
+                <li>• Created interactive Power BI dashboards, cutting reporting time by 15%.</li>
+                <li>•	Automated data cleaning scripts in Python, saving 9% manual effort.</li>
               </ul>
             </div>
 
