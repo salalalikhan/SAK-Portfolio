@@ -241,7 +241,7 @@ function App() {
                   <span className="text-white flex items-center gap-2">
                     <FaAws /> AWS
                   </span>
-                  <span className="text-orange-500">70%</span>
+                  <span className="text-orange-500">65%</span>
                 </div>
                 <div className="h-2 bg-gray-700 rounded-full">
                   <div className="h-full w-[70%] bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"></div>
