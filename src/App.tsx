@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, X, Zap, Mail, Github, Linkedin, Phone } from 'lucide-react';
+import profilePic from './assets/profile.jpg';
 
 // Fallback icons for AWS & Power BI
 import { FaAws } from 'react-icons/fa';
@@ -133,7 +134,7 @@ function App() {
             </div>
             <div className="mt-8 md:mt-0 w-32 md:w-48">
               <img
-                src="https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/male/45.png"
+                src={profilePic}
                 alt="Salal Ali Khan"
                 className="rounded-full border-4 border-orange-500 shadow-xl"
               />
