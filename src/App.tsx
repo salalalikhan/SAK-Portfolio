@@ -368,14 +368,14 @@ function App() {
 
             {/* Project 2 */}
             <a
-              href="https://github.com/salalalikhan/Logistic-SGD-Performance"
+              href="https://github.com/salalalikhan/Halifax-bar-sentiment"
               target="_blank"
               rel="noopener noreferrer"
               className="block group"
             >
               <div className="bg-gray-800 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:bg-gray-700">
                 <h3 className="text-xl font-bold text-orange-500 mb-2">
-                  Logistic SGD Performance
+                  Halifax Bars, Reddit Sentiment Analysis
                 </h3>
                 <p className="text-gray-400">View on GitHub</p>
               </div>
