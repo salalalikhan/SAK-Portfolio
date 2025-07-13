@@ -150,10 +150,7 @@ function App() {
             About Me
           </h2>
           <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto">
-            I'm passionate about designing scalable data systems, optimizing machine learning workflows,
-            and transforming raw data into actionable insights. With hands-on experience across UN and
-            international development sectors, I bring both analytical sharpness and real-world impact
-            to the table.
+            Data Engineer with a Master’s in Computer Science and hands-on experience building scalable ETL pipelines, cloud data platforms, and real-time streaming systems. Proficient in Python, SQL, Airflow, and AWS/GCP. Proven track record in delivering reliable data solutions that drive business insights and analytics. Passionate about clean data architecture, automation, and performance optimization.
           </p>
         </div>
       </section>
