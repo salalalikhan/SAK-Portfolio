@@ -291,14 +291,31 @@ function App() {
               </p>
               <ul className="mt-4 space-y-2 text-gray-300">
                 <li>
-                  • Designed and optimized ETL pipelines; automated workflows using Snowflake Streams
-                  for a 12% efficiency gain.
+                  • Built data pipelines for health programs using Python, SQL and Apache Airflow to process patient records and health facility data with strong accuracy
                 </li>
                 <li>
-                  • Built scalable data infrastructure and implemented real-time data streaming for faster decisions.
+                  • Set up Snowflake data warehouse for health information systems, helping teams monitor medical supplies and track patient outcomes in real-time
                 </li>
                 <li>
-                  • Reduced dashboard load times by 7% via query performance tuning.
+                  • Created cloud-based health data systems on AWS that connected electronic health records across 15+ rural health facilities
+                </li>
+                <li>
+                  • Improved health data queries and reports, making patient information 25% faster to access for doctors and healthcare workers
+                </li>
+                <li>
+                  • Worked with healthcare teams and program managers to ensure patient data was secure and met compliance standards
+                </li>
+                <li>
+                  • Developed data quality monitoring systems that automatically flagged inconsistencies in health records, improving data reliability by 30%
+                </li>
+                <li>
+                  • Created automated reporting workflows that generated weekly health program updates for donors and government partners
+                </li>
+                <li>
+                  • Implemented backup and disaster recovery procedures for critical health databases, ensuring 99.9% uptime during emergencies
+                </li>
+                <li>
+                  • Trained local staff on data management best practices and provided technical documentation for system maintenance
                 </li>
               </ul>
             </div>
@@ -310,9 +327,36 @@ function App() {
                 April 2021 – March 2022 | United Nations Development Program, Peshawar, PK
               </p>
               <ul className="mt-4 space-y-2 text-gray-300">
-                <li>• Conducted EDA on COVID datasets to support 3 key policy briefs.</li>
-                <li>• Created interactive Power BI dashboards, cutting reporting time by 15%.</li>
-                <li>• Automated data cleaning scripts in Python, saving 9% manual effort.</li>
+                <li>
+                  • Analyzed COVID-19 datasets from multiple sources (500K+ records) using Python and SQL to support pandemic response planning and policy decisions
+                </li>
+                <li>
+                  • Created interactive Power BI dashboards to track COVID-19 metrics and trends, helping 25+ team members across 5 departments monitor the situation
+                </li>
+                <li>
+                  • Built automated tools in Python to clean and validate COVID-19 data, saving the team 14% of manual work each week
+                </li>
+                <li>
+                  • Made clear charts and reports using Tableau and Excel to help decision-makers understand COVID-19 data and plan responses
+                </li>
+                <li>
+                  • Used statistical methods to find patterns in COVID-19 data that helped measure how well different programs were working
+                </li>
+                <li>
+                  • Collaborated with epidemiologists and public health experts to validate COVID-19 data models and ensure accurate trend forecasting
+                </li>
+                <li>
+                  • Created data collection templates and guidelines that standardized COVID-19 reporting across different regions and partners
+                </li>
+                <li>
+                  • Performed geospatial analysis to map COVID-19 hotspots and vulnerable populations, supporting targeted intervention strategies
+                </li>
+                <li>
+                  • Maintained secure databases of sensitive health information while ensuring data privacy and ethical research standards
+                </li>
+                <li>
+                  • Presented findings to senior management and international partners through clear data stories and executive summaries
+                </li>
               </ul>
             </div>
 
