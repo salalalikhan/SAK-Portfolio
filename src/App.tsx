@@ -439,14 +439,14 @@ function App() {
 
             {/* Project 4 */}
             <a
-              href="https://github.com/salalalikhan/online-retail-analytics"
+              href="https://github.com/salalalikhan/student-success-platform"
               target="_blank"
               rel="noopener noreferrer"
               className="block group"
             >
               <div className="bg-gray-800 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:bg-gray-700">
                 <h3 className="text-xl font-bold text-orange-500 mb-2">
-                  Retail analytics
+                  Student Success Tracking Platform
                 </h3>
                 <p className="text-gray-400">View on GitHub</p>
               </div>
